@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-06-02.09:55:15</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-06-02.13:29:12</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -2039,204 +2039,227 @@ model</ColNames>
       <Position>3</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="660" parent="565" name="duration">
+    <column id="660" parent="565" name="start_date">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>date|0s</StoredType>
     </column>
-    <key id="661" parent="565">
+    <column id="661" parent="565" name="end_date">
+      <Position>5</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <key id="662" parent="565">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="662" parent="566" name="id">
+    <column id="663" parent="566" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="663" parent="566" name="language">
+    <column id="664" parent="566" name="language">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="664" parent="566" name="listening">
+    <column id="665" parent="566" name="listening">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="665" parent="566" name="reading">
+    <column id="666" parent="566" name="reading">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="666" parent="566" name="conversation">
+    <column id="667" parent="566" name="conversation">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="667" parent="566" name="oral_exposure">
+    <column id="668" parent="566" name="oral_exposure">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <column id="668" parent="566" name="writing">
+    <column id="669" parent="566" name="writing">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>varchar(5)|0s</StoredType>
     </column>
-    <key id="669" parent="566">
+    <column id="670" parent="566" name="is_mother_tongue">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>bool|0s</StoredType>
+    </column>
+    <key id="671" parent="566">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="670" parent="567" name="id">
+    <column id="672" parent="567" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="671" parent="567" name="name">
+    <column id="673" parent="567" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="672" parent="567" name="title">
+    <column id="674" parent="567" name="title">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="673" parent="567" name="summary">
+    <column id="675" parent="567" name="summary">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="674" parent="567" name="contact_address">
+    <column id="676" parent="567" name="contact_address">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="675" parent="567" name="contact_phone">
+    <column id="677" parent="567" name="contact_phone">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="676" parent="567" name="email">
+    <column id="678" parent="567" name="email">
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>varchar(254)|0s</StoredType>
     </column>
-    <column id="677" parent="567" name="target_employment">
+    <column id="679" parent="567" name="target_employment">
       <NotNull>1</NotNull>
       <Position>8</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <key id="678" parent="567">
+    <column id="680" parent="567" name="profile_picture">
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <key id="681" parent="567">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="679" parent="568" name="id">
+    <column id="682" parent="568" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="680" parent="568" name="domain">
+    <column id="683" parent="568" name="domain">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="681" parent="568" name="url">
+    <column id="684" parent="568" name="url">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="682" parent="568" name="personal_info_id">
+    <column id="685" parent="568" name="personal_info_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>bigint|0s</StoredType>
     </column>
-    <foreign-key id="683" parent="568">
+    <foreign-key id="686" parent="568">
       <ColNames>personal_info_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>resume_personalinfo</RefTableName>
     </foreign-key>
-    <index id="684" parent="568" name="resume_portfoliolink_personal_info_id_3469d819">
+    <index id="687" parent="568" name="resume_portfoliolink_personal_info_id_3469d819">
       <ColNames>personal_info_id</ColNames>
     </index>
-    <key id="685" parent="568">
+    <key id="688" parent="568">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="686" parent="569" name="id">
+    <column id="689" parent="569" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="687" parent="569" name="category">
+    <column id="690" parent="569" name="category">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="688" parent="569" name="name">
+    <column id="691" parent="569" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <key id="689" parent="569">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="690" parent="570" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <column id="691" parent="570" name="title">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(200)|0s</StoredType>
-    </column>
-    <column id="692" parent="570" name="company">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>varchar(200)|0s</StoredType>
-    </column>
-    <column id="693" parent="570" name="duration">
+    <column id="692" parent="569" name="progress">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>integer|0s</StoredType>
     </column>
-    <key id="694" parent="570">
+    <key id="693" parent="569">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="695" parent="571" name="type">
+    <column id="694" parent="570" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
+    </column>
+    <column id="695" parent="570" name="title">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(200)|0s</StoredType>
+    </column>
+    <column id="696" parent="570" name="company">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(200)|0s</StoredType>
+    </column>
+    <column id="697" parent="570" name="start_date">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="698" parent="570" name="end_date">
+      <Position>5</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <key id="699" parent="570">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="700" parent="571" name="type">
       <Position>1</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="696" parent="571" name="name">
+    <column id="701" parent="571" name="name">
       <Position>2</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="697" parent="571" name="tbl_name">
+    <column id="702" parent="571" name="tbl_name">
       <Position>3</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="698" parent="571" name="rootpage">
+    <column id="703" parent="571" name="rootpage">
       <Position>4</Position>
       <StoredType>INT|0s</StoredType>
     </column>
-    <column id="699" parent="571" name="sql">
+    <column id="704" parent="571" name="sql">
       <Position>5</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="700" parent="572" name="name">
+    <column id="705" parent="572" name="name">
       <Position>1</Position>
     </column>
-    <column id="701" parent="572" name="seq">
+    <column id="706" parent="572" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

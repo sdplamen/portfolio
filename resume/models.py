@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 # Create your models here.
@@ -9,6 +10,7 @@ class PersonalInfo(models.Model):
     contact_phone = models.CharField(max_length=20)
     email = models.EmailField()
     target_employment = models.CharField(max_length=200)
+    profile_picture = models.ImageField(upload_to='static/img/')
 
     def __str__(self):
         return self.name
@@ -21,16 +23,29 @@ class PortfolioLink(models.Model):
 class WorkExperience(models.Model):
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
-    duration = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.title} at {self.company}"
 
 class Skill(models.Model):
     category = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
+    progress = models.IntegerField(
+        default=0,
+        validators=[MinValueValidator(0), MaxValueValidator(100)],
+        help_text="Progress percentage (0-10)"
+    )
 
 class EducationTraining(models.Model):
     degree = models.CharField(max_length=200)
     institution = models.CharField(max_length=200)
-    duration = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.degree} from {self.institution}"
 
 class LanguageSkill(models.Model):
     language = models.CharField(max_length=50)
