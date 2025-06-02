@@ -1,22 +1,25 @@
 from django.shortcuts import render
-from resume.models import UserProfile, WorkExperience, Education, SkillCategory, Language, PortfolioLink
+from resume.models import PersonalInfo, WorkExperience, Skill, EducationTraining, LanguageSkill, PortfolioLink
 
 
 # Create your views here.
 def resume(request):
-    user_profile = UserProfile.objects.first()
-    work_experiences = WorkExperience.objects.all().order_by('-start_date')
-    education_entries = Education.objects.all().order_by('-start_date')
-    skill_categories = SkillCategory.objects.all().prefetch_related('skills')
-    languages = Language.objects.all().order_by('language_name')
-    portfolio_links = PortfolioLink.objects.all()
+    personal_info = PersonalInfo.objects.first()
+    work_experience = WorkExperience.objects.all()
+    professional_skills = Skill.objects.all()
+    education_training = EducationTraining.objects.all()
+    mother_tongue_obj = LanguageSkill.objects.filter(is_mother_tongue=True).first()
+    foreign_languages_objs = LanguageSkill.objects.filter(is_mother_tongue=False).order_by('language')
+    portfolio_links = PortfolioLink.objects.filter(personal_info=personal_info)
 
     context = {
-        'user_profile': user_profile,
-        'work_experiences': work_experiences,
-        'education_entries': education_entries,
-        'skill_categories': skill_categories,
-        'languages': languages,
-        'portfolio_links': portfolio_links,
+        'personal_info': personal_info,
+        'work_experience': work_experience,
+        'professional_skills': professional_skills,
+        'education_training': education_training,
+        'mother_tongue_obj': mother_tongue_obj,
+        'foreign_languages_objs': foreign_languages_objs,
+        'portfolio_links': portfolio_links,  # And include this
     }
-    return render(request, 'resume_detail.html', context)
+
+    return render(request, 'resume.html', context)
