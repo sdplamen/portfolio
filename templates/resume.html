@@ -1,4 +1,5 @@
-{% load static %} {# Load the static files tag #}
+{% load static %}
+{% load resume_filters %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plamen Stoilkov - Resume</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {# Link to your external CSS file #}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
@@ -14,11 +15,13 @@
     <p>{{ personal_info.title }}</p>
     <p>{{ personal_info.summary }}</p>
 
-    {# Contact Information - Top Block #}
-    <div class="profile-contact-container section">
-        <div class="profile-picture-block">
-            <img src="{{ personal_info.profile_picture.url }}" alt="Picture">
-        </div>
+    {# Profile Picture and Contact Information Inline Blocks #}
+    <div class="profile-contact-container section"> {# Use section class for background/border/shadow #}
+        {% if personal_info.profile_picture %}
+            <div class="profile-picture-block">
+                <img src="{{ personal_info.profile_picture.url }}" alt="Profile Picture">
+            </div>
+        {% endif %}
         <div class="contact-info-block">
             <h2>Contact Information</h2>
             <p><strong>Address:</strong> {{ personal_info.contact_address }}</p>
@@ -26,6 +29,7 @@
             <p><strong>Email:</strong> {{ personal_info.email }}</p>
         </div>
     </div>
+
     {# Target Employment - Next Block #}
     <div class="section">
         <h2>Target Employment</h2>
@@ -56,14 +60,14 @@
         {# Professional Skills Block #}
         <div class="section">
             <h2>Professional Skills and Competences</h2>
-            <div class="skill-container"> {# skill-container is already flex/wrap inside #}
+            <div class="skill-container">
                 <div class="skill-block">
                     <h3>Development Skills</h3>
                     {% for category, skills in development_skills.items %}
-                        <p class="skill-category-title">{{ category }:</p>
+                        <p class="skill-category-title">category|custom_replace:"_, ":</p>
                         <ul>
-                            {% for skill_name in skills %} {# Change variable name to skill_name #}
-                                {% with skill_obj=all_skills_dict %}
+                            {% for skill_name in skills %}
+                                {% with skill_obj=all_skills_dict|get_item:skill_name %}
                                 <li>
                                     {{ skill_name }}
                                     {% if skill_obj %}
@@ -82,10 +86,10 @@
                 <div class="skill-block">
                     <h3>Graphic Design Skills</h3>
                     {% for category, skills in graphic_design_skills.items %}
-                        <p class="skill-category-title">{{ category }}:</p>
+                        <p class="skill-category-title">category|custom_replace:"_, ":</p>
                         <ul>
-                            {% for skill_name in skills %} {# Change variable name to skill_name #}
-                                {% with skill_obj=all_skills_dict %}
+                            {% for skill_name in skills %}
+                                {% with skill_obj=all_skills_dict|get_item:skill_name %}
                                 <li>
                                     {{ skill_name }}
                                     {% if skill_obj %}
@@ -121,7 +125,7 @@
                 </div>
             {% endfor %}
         </div>
-    </div> {# End three-column-layout #}
+    </div>
 
     {# Two Inline Blocks: Portfolio and Language Skills #}
     <div class="two-column-layout">
@@ -155,143 +159,7 @@
                 {% endfor %}
             </ul>
         </div>
-    </div> {# End two-column-layout #}
+    </div>
 
 </body>
 </html>
-
-<!--{% load static %}-->
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Plamen Stoilkov - Resume</title>-->
-<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
-<!--</head>-->
-<!--<body>-->
-
-<!--    <h1>{{ personal_info.name }}</h1>-->
-<!--    <p>{{ personal_info.title }}</p>-->
-<!--    <p>{{ personal_info.summary }}</p>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Contact Information</h2>-->
-<!--        <p><strong>Address:</strong> {{ personal_info.contact_address }}</p>-->
-<!--        <p><strong>Phone:</strong> {{ personal_info.contact_phone }}</p>-->
-<!--        <p><strong>Email:</strong> {{ personal_info.email }}</p>-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Target Employment</h2>-->
-<!--        <p>{{ personal_info.target_employment }}</p>-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Portfolio</h2>-->
-<!--        <ul>-->
-<!--            {% for link in portfolio_links %} {# Use portfolio_links directly, not personal_info.portfolio_links #}-->
-<!--                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>-->
-<!--            {% endfor %}-->
-<!--        </ul>-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Work Experience</h2>-->
-<!--        {% for job in work_experience %}-->
-<!--            <div>-->
-<!--                <p class="job-title">{{ job.title }}</p>-->
-<!--                <p class="company">{{ job.company }}</p>-->
-<!--                <p class="duration">-->
-<!--                    {{ job.start_date|date:"F Y" }} - -->
-<!--                    {% if job.end_date %}-->
-<!--                        {{ job.end_date|date:"F Y" }}-->
-<!--                    {% else %}-->
-<!--                        Present-->
-<!--                    {% endif %}-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Professional Skills and Competences</h2>-->
-<!--            <div class="skill-container">-->
-<!--                <div class="skill-block">-->
-<!--                    <h3>Development Skills</h3>-->
-<!--                    {% for category, skills in development_skills.items %}-->
-<!--                        <p class="skill-category-title">{{ category }}:</p>-->
-<!--                        <ul>-->
-<!--                            {% for skill in skills %}-->
-<!--                                <li>-->
-<!--                                    {{ skill }}-->
-<!--                                    <div class="progress-bar-container">-->
-<!--                                        <div class="progress-bar" style="width: {{ skill.progress }}%;"></div>-->
-<!--                                    </div>-->
-<!--                                    <span class="progress-label">{{ skill.progress }}%</span>-->
-<!--                                </li>-->
-<!--                            {% endfor %}-->
-<!--                        </ul>-->
-<!--                    {% endfor %}-->
-<!--                </div>-->
-
-<!--                <div class="skill-block">-->
-<!--                    <h3>Graphic Design Skills</h3>-->
-<!--                    {% for category, skills in graphic_design_skills.items %}-->
-<!--                        <p class="skill-category-title">{{ category }}:</p>-->
-<!--                        <ul>-->
-<!--                            {% for skill in skills %}-->
-<!--                                <li>-->
-<!--                                    {{ skill }}-->
-<!--                                    <div class="progress-bar-container">-->
-<!--                                        <div class="progress-bar" style="width: {{ skill.progress }}%;"></div>-->
-<!--                                    </div>-->
-<!--                                     <span class="progress-label">{{ skill.progress }}%</span>-->
-<!--                                </li>-->
-<!--                            {% endfor %}-->
-<!--                        </ul>-->
-<!--                    {% endfor %}-->
-<!--                </div>-->
-<!--            </div>-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Education and Training</h2>-->
-<!--        {% for edu in education_training %}-->
-<!--            <div>-->
-<!--                <p class="job-title">{{ edu.degree }}</p>-->
-<!--                <p class="company">{{ edu.institution }}</p>-->
-<!--                <p class="duration">-->
-<!--                    {{ edu.start_date|date:"F Y" }} - -->
-<!--                    {% if edu.end_date %}-->
-<!--                        {{ edu.end_date|date:"F Y" }}-->
-<!--                    {% else %}-->
-<!--                        Ongoing-->
-<!--                    {% endif %}-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
-<!--    <div class="section">-->
-<!--        <h2>Language Skills</h2>-->
-<!--        {% if mother_tongue_obj %}-->
-<!--            <p><strong>Mother Tongue:</strong> {{ mother_tongue_obj.language }}</p>-->
-<!--        {% endif %}-->
-<!--        <h3>Foreign Languages:</h3>-->
-<!--        <ul>-->
-<!--            {% for lang in foreign_languages_objs %}-->
-<!--                <li>-->
-<!--                    <strong>{{ lang.language }}:</strong>-->
-<!--                    Listening: {{ lang.listening }},-->
-<!--                    Reading: {{ lang.reading }},-->
-<!--                    Conversation: {{ lang.conversation }},-->
-<!--                    Oral Exposure: {{ lang.oral_exposure }},-->
-<!--                    Writing: {{ lang.writing }}-->
-<!--                </li>-->
-<!--            {% endfor %}-->
-<!--        </ul>-->
-<!--    </div>-->
-
-<!--</body>-->
-<!--</html>-->
