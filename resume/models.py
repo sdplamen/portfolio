@@ -29,12 +29,12 @@ class WorkExperience(models.Model):
     def __str__(self):
         return f"{self.title} at {self.company}"
 
-class Skill(models.Model):
+class ProfessionalSkill(models.Model):
     category = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     progress = models.IntegerField(
         default=0,
-        validators=[MinValueValidator(0), MaxValueValidator(100)],
+        validators=[MinValueValidator(0), MaxValueValidator(10)],
         help_text="Progress percentage (0-10)"
     )
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from resume.models import PersonalInfo, WorkExperience, Skill, EducationTraining, LanguageSkill, PortfolioLink
+from resume.models import PersonalInfo, WorkExperience, ProfessionalSkill, EducationTraining, LanguageSkill, PortfolioLink
 
 
 # Create your views here.
@@ -78,11 +78,21 @@ def professional_skills_view(request):
     all_skills_dict = {skill.name: skill for skill in all_skills_queryset}
 
     development_skill_categories = [
-        'web_design_front_end', 'backend_skills', 'computer_science_programming',
-        'databases', 'data_structures', 'devops',
+        'Web Design',
+        'Backend',
+        'Computer Science Programming',
+        'Data Structures',
+        'DevOps'
     ]
     graphic_design_skill_categories = [
-        'graphic_design',
+        '2D Graphic Design',
+        '3D Graphic Design',
+        'Interior Design',
+        'Brand Identity',
+        'UX / UI Design',
+        'Instructional Design',
+        'Video Editing',
+        'Scanning',
     ]
 
     development_skills = {}

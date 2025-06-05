@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load resume_filters %}
-<p>{{ skill.name }} – Progress: {{ skill.progress }}</p>
-<p>Dev categories found: {{ development_skills }}</p>
-<p>Design categories found: {{ graphic_design_skills }}</p>
-<p>Debug: Found {{ development_skills|length }} dev categories and {{ graphic_design_skills|length }} design categories.</p>
 {% block content %}
     <h1>Professional Skills</h1>
     <div class="skills-category">
