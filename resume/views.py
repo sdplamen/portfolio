@@ -74,13 +74,14 @@ def work_experience_view(request):
     return render(request, 'work_experience.html', context)
 
 def professional_skills_view(request):
-    all_skills_queryset = Skill.objects.all().order_by('category', 'name')
+    all_skills_queryset = ProfessionalSkill.objects.all().order_by('category', 'name')
     all_skills_dict = {skill.name: skill for skill in all_skills_queryset}
 
     development_skill_categories = [
         'Web Design',
         'Backend',
         'Computer Science Programming',
+        'Databases'
         'Data Structures',
         'DevOps'
     ]

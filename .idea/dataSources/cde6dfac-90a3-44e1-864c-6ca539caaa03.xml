@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-06-02.13:29:12</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-06-05.14:46:39</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1604,7 +1604,7 @@
     <table id="566" parent="191" name="resume_languageskill"/>
     <table id="567" parent="191" name="resume_personalinfo"/>
     <table id="568" parent="191" name="resume_portfoliolink"/>
-    <table id="569" parent="191" name="resume_skill"/>
+    <table id="569" parent="191" name="resume_professionalskill"/>
     <table id="570" parent="191" name="resume_workexperience"/>
     <table id="571" parent="191" name="sqlite_master">
       <System>1</System>
