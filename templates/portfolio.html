@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+    <h1>Portfolio</h1>
+    {% if portfolio_links %}
+        <ul class="portfolio-list">
+            {% for link in portfolio_links %}
+                <li class="section-block">
+                    <strong>{{ link.domain }}:</strong> <a href="{{ link.url }}" target="_blank">{{ link.url }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No portfolio links available.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load resume_filters %}
+<p>{{ skill.name }} – Progress: {{ skill.progress }}</p>
+<p>Dev categories found: {{ development_skills }}</p>
+<p>Design categories found: {{ graphic_design_skills }}</p>
+<p>Debug: Found {{ development_skills|length }} dev categories and {{ graphic_design_skills|length }} design categories.</p>
+{% block content %}
+    <h1>Professional Skills</h1>
+    <div class="skills-category">
+        <h3>Development Skills</h3>
+        <ul class="skills-list">
+            {% for category, skill_names in development_skills.items %}
+                {% for skill_name in skill_names %}
+                    {% with skill=all_skills_dict|get_item:skill_name %}
+                        <li class="skill-item">
+                            <p>{{ skill.name }}</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: {{ skill.progress }}%;">
+                                    {{ skill.progress }}%
+                                </div>
+                            </div>
+                        </li>
+                    {% endwith %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="skills-category">
+        <h3>Graphic Design Skills</h3>
+        <ul class="skills-list">
+            {% for category, skill_names in graphic_design_skills.items %}
+                {% for skill_name in skill_names %}
+                    {% with skill=all_skills_dict|get_item:skill_name %}
+                        <li class="skill-item">
+                            <p>{{ skill.name }}</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar graphic-design" style="width: {{ skill.progress }}%;">
+                                    {{ skill.progress }}%
+                                </div>
+                            </div>
+                        </li>
+                    {% endwith %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

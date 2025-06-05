@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Work Experience</h1>
+        {% for job in work_experience %}
+            <div class="section-block">
+                <h3 class="job-title">{{ job.title }}</h3>
+                <p class="company">{{ job.company }}</p>
+                <p class="duration">
+                    {{ job.start_date|date:"F Y" }} -
+                        {% if job.end_date %}
+                            {{ job.end_date|date:"F Y" }}
+                        {% else %}
+                            Present
+                        {% endif %}
+                </p>
+            </div>
+        {% endfor %}
+{% endblock %}

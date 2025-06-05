@@ -1,51 +1,36 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Resume site</title>
-    <link rel="icon"
-          href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Repl.it_logo.svg/220px-Repl.it_logo.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="{% static 'css/' %}" rel="stylesheet" type="text/css"/>
-    <script src="{% static 'css/script.js' %}"></script>
-    <img src="{% static 'img/DSL_logo.png' %}" alt="logo"/> {# This logo likely belongs inside your header #}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Resume{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'resume' %}">Resume</a></li>
+                <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
+                <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
+                <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
+                <li><a href="{% url 'education_training' %}">Education and Training</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a href="{% url 'language_skills' %}">Languages</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container"> {# This container likely wraps your whole site content #}
+    <main class="description">
+        {% block content %}
+        {% endblock %}
+    </main>
 
-        <header>
-            <a class="logo" href="#home">
-                <img src="{% static 'img/DSL_logo.png' %}" alt="logo"/>
-            </a>
-            <nav>
-                <ul class="nav-bar">
-                    <div class="bg"></div>
-                    <li><a class="nav-link active" href="#home">Home</a></li>
-                    <li><a class="nav-link" href="#projects">Projects</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-
-        <footer class="copyright"> © 2022
-            <a href="https://www.linkedin.com/in/plamen-stoilkov-3799b6a1/" target="_blank"> Plamen Stoilkov</a>
-        </footer>
-
-    </div> {# Closing .container #}
-
+    <footer>
+        <p>&copy; {% now "Y" %} My Resume</p>
+        <p><a href="{% url 'resume' %}">Back to Main Page</a></p>
+    </footer>
 </body>
 </html>

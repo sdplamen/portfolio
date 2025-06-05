@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Information{% endblock %}
+
+{% block content %}
+    <h1>Contact Information</h1>
+        <p><strong>Address:</strong> {{ personal_info.contact_address }}</p>
+        <p><strong>Phone:</strong> {{ personal_info.contact_phone }}</p>
+        <p><strong>Email:</strong> <a href="mailto:{{ personal_info.email }}">{{ personal_info.email }}</a></p>
+        <p><strong>Target employment:</strong> {{ personal_info.target_employment }}</p>
+{% endblock %}

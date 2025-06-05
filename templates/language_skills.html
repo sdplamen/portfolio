@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Language Skills{% endblock %}
+
+{% block content %}
+    <h1>Language Skills</h1>
+
+    {% if mother_tongue_obj %}
+        <h2 class="language-section">Mother Tongue</h2>
+        <p><strong>{{ mother_tongue_obj.language }}</strong></p>
+    {% endif %}
+
+    <h2 class="language-section">Foreign Languages</h2>
+        {% for lang in foreign_languages_objs %}
+            <div class="language-block">
+                <h3>{{ lang.language }}</h3>
+                <ul class="language-details-list">
+                    <li>Listening: {{ lang.listening }}</li>
+                    <li>Reading: {{ lang.reading }}</li>
+                    <li>Conversation: {{ lang.conversation }}</li>
+                    <li>Oral Exposure: {{ lang.oral_exposure }}</li>
+                    <li>Writing: {{ lang.writing }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+{% endblock %}

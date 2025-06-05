@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Education & Training{% endblock %}
+
+{% block content %}
+    <h1>Education & Training</h1>
+        {% for education in education_training %}
+            <div class="section-block">
+                <h3>{{ education.degree }}</h3>
+                <p><strong>Institution:</strong> {{ education.institution }}</p>
+                <p>
+                    {{ education.start_date|date:"F Y" }} -
+                    {% if education.end_date %}
+                        {{ education.end_date|date:"F Y" }}
+                    {% else %}
+                        Present
+                    {% endif %}
+                </p>
+            </div>
+        {% endfor %}
+{% endblock %}
