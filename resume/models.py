@@ -1,5 +1,8 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from django.db.models import Q
+from django.db.models.constraints import CheckConstraint
+
 
 # Create your models here.
 class PersonalInfo(models.Model):
@@ -55,11 +58,11 @@ class EducationTraining(models.Model):
 
 class LanguageSkill(models.Model):
     language = models.CharField(max_length=50)
-    listening = models.CharField(max_length=5)
-    reading = models.CharField(max_length=5)
-    conversation = models.CharField(max_length=5)
-    oral_exposure = models.CharField(max_length=5)
-    writing = models.CharField(max_length=5)
+    listening = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+    reading = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+    conversation = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+    oral_exposure = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+    writing = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
     is_mother_tongue = models.BooleanField(default=False)
 
     def __str__(self):

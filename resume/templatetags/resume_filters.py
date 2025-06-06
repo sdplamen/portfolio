@@ -1,4 +1,5 @@
 from django import template
+from django.utils.html import format_html
 
 register = template.Library()
 
@@ -21,3 +22,14 @@ def get_item(dictionary, key):
     Usage: {{ dictionary|get_item:key }}
     """
     return dictionary.get(key)
+
+@register.filter
+def autoparagrpah(value):
+    """
+    Converts newline characters in a string into HTML paragraphs.
+    """
+    if not value:
+        return ''
+    paragraphs = value.split('\n')
+    paragraphs = [p.strip() for p in paragraphs if p.strip()]
+    return format_html("".join("<p>{}</p>".format(p) for p in paragraphs))

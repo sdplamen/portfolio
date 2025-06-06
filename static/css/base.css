@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333; /* Default text color, usually overridden */
+    color: #F5DEB3; /* Default text color, usually overridden */
     background-color: #333; /* Dark fallback if image fails, complements B&W */
     background-image: url('https://live.staticflickr.com/65535/52349342717_3e5f0003e2_b.jpg'); /* Overall page background */
     background-size: cover;
@@ -36,12 +36,49 @@ a:hover {
     color: #388E3C;
 }
 
+---
+/* For smaller screens, stack the image and text vertically */
+.intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 0;
+}
+.intro-header .profile-picture {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #F5DEB3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0;
+    margin-right: 0;
+}
+.name-title-block {
+    text-align: left;
+}
+.name-title-block h1,
+.name-title-block .personal-title {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #F5DEB3;
+}
+/* --- Profile Picture --- */
+.profile-picture {
+    margin-right: 20px;
+    max-width: 200px;
+    border-radius: 50%;
+    border: 5px solid #F5DEB3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
 
 .description {
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
     border: 3px solid #666;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
@@ -54,7 +91,8 @@ a:hover {
 .description span,
 .description strong,
 .description em {
-    color: #333;
+    color: #F5DEB3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
 /* Headings *inside* the description block */
@@ -67,7 +105,8 @@ a:hover {
 
 /* Links inside the description block */
 .description a {
-    color: #ADD8E6; /* Light blue for links, stands out on dark background */
+    color: antiquewhite; /* Light blue for links, stands out on dark background */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 .description a:hover {
     color: #87CEEB;
@@ -156,8 +195,18 @@ nav ul li a.active {
 ---
 
 /* --- Professional Skills Section --- */
+.skills-container-wrapper {
+    text-align: center;
+    overflow: hidden;
+}
 .skills-category {
     margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin-right: 2%;
+    padding: 10px  10px;
+    box-sizing: border-box;
 }
 .skills-category h3 {
     text-align: left;
@@ -196,8 +245,6 @@ nav ul li a.active {
     background-color: #2196F3;
 }
 
-
-
 /* --- Portfolio Section --- */
 .portfolio-list {
     list-style: none;
@@ -210,10 +257,10 @@ nav ul li a.active {
     border-radius: 8px;
     border: 1px solid #555;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    color: #E0E0E0;
+    color: #F5DEB3;
 }
 .portfolio-list li strong {
-    color: #ADD8E6;
+    color: #F5DEB3;
 }
 .portfolio-list li a {
     color: #ADD8E6;
@@ -232,12 +279,13 @@ nav ul li a.active {
 .language-block {
     margin-bottom: 15px;
     padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.8); /* **Dark background** */
+    background-color: rgba(0, 0, 0, 0.4); /* **Dark background** */
     border-radius: 8px;
     border: 1px solid #555;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     color: #E0E0E0;
 }
+
 .language-block h3 {
     text-align: left;
     margin-bottom: 5px;
@@ -252,7 +300,7 @@ nav ul li a.active {
     gap: 10px;
 }
 .language-block li {
-    background-color: #333; /* Darker background for individual items */
+    background-color: grey; /* Darker background for individual items */
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.9em;
@@ -262,23 +310,12 @@ nav ul li a.active {
 
 ---
 
-/* --- Profile Picture --- */
-.profile-picture {
-    display: block;
-    margin: 20px auto;
-    max-width: 200px;
-    border-radius: 50%;
-    border: 5px solid #F5DEB3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-}
-
----
-
 /* --- Footer --- */
 footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
+    font-weight: 600;
     color: antiquewhite;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     background-color: rgba(0, 0, 0, 0.6);
@@ -307,22 +344,9 @@ footer {
         display: block;
         padding: 10px;
     }
-    /* For smaller screens, stack the image and text vertically */
-    .intro-header {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .intro-header .profile-picture {
-        margin-bottom: 0; /* Adjust margin for stacking */
-    }
-    .name-title-block {
-        text-align: center; /* Center text when stacked */
-    }
-    .name-title-block h1,
-    .name-title-block .personal-title {
-        text-align: center; /* Center text when stacked */
-    }
 }
+
+
 
 @media (max-width: 480px) {
     h1 { font-size: 2em; }

@@ -3,44 +3,45 @@
 {% load resume_filters %}
 {% block content %}
     <h1>Professional Skills</h1>
-    <div class="skills-category">
-        <h3>Development Skills</h3>
-        <ul class="skills-list">
-            {% for category, skill_names in development_skills.items %}
-                {% for skill_name in skill_names %}
-                    {% with skill=all_skills_dict|get_item:skill_name %}
-                        <li class="skill-item">
-                            <p>{{ skill.name }}</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: {{ skill.progress }}%;">
-                                    {{ skill.progress }}%
+    <div class="skills-container-wrapper">
+        <div class="skills-category">
+            <h3>Development Skills</h3>
+            <ul class="skills-list">
+                {% for category, skill_names in development_skills.items %}
+                    {% for skill_name in skill_names %}
+                        {% with skill=all_skills_dict|get_item:skill_name %}
+                            <li class="skill-item">
+                                <p>{{ skill.name }}</p>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: {{ skill.progress_percent }}%;">
+                                        {{ skill.progress }}
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    {% endwith %}
+                            </li>
+                        {% endwith %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
+            </ul>
+        </div>
 
-    <div class="skills-category">
-        <h3>Graphic Design Skills</h3>
-        <ul class="skills-list">
-            {% for category, skill_names in graphic_design_skills.items %}
-                {% for skill_name in skill_names %}
-                    {% with skill=all_skills_dict|get_item:skill_name %}
-                        <li class="skill-item">
-                            <p>{{ skill.name }}</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar graphic-design" style="width: {{ skill.progress }}%;">
-                                    {{ skill.progress }}%
+        <div class="skills-category">
+            <h3>Graphic Design Skills</h3>
+            <ul class="skills-list">
+                {% for category, skill_names in graphic_design_skills.items %}
+                    {% for skill_name in skill_names %}
+                        {% with skill=all_skills_dict|get_item:skill_name %}
+                            <li class="skill-item">
+                                <p>{{ skill.name }}</p>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar graphic-design" style="width: {{ skill.progress_percent }}%;">
+                                        {{ skill.progress }}
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    {% endwith %}
+                            </li>
+                        {% endwith %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        </ul>
+            </ul>
+        </div>
     </div>
-
 {% endblock %}

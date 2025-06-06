@@ -77,6 +77,9 @@ def professional_skills_view(request):
     all_skills_queryset = ProfessionalSkill.objects.all().order_by('category', 'name')
     all_skills_dict = {skill.name: skill for skill in all_skills_queryset}
 
+    for skill in all_skills_queryset:
+        skill.progress_percent = skill.progress * 10
+
     development_skill_categories = [
         'Web Design',
         'Backend',
@@ -114,7 +117,9 @@ def professional_skills_view(request):
         'graphic_design_skills': graphic_design_skills,
         'all_skills_dict': all_skills_dict,
     }
+
     return render(request, 'professional_skills.html', context)
+
 
 def education_training_view(request):
     education_training = EducationTraining.objects.all()

@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Resume{% endblock %}
-
+{% load resume_filters %}
 {% block content %}
     <div class="intro-header">
         <img src="{{ personal_info.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
         <div class="name-title-block">
             <h1>{{ personal_info.name }}</h1>
-            <p class="personal-title">{{ personal_info.title }}</p>
+            <h3 class="personal-title">{{ personal_info.title }}</h3>
+            <p>{{ personal_info.summary|autoparagrpah }}</p>
         </div>
     </div>
-
-    <p>{{ personal_info.summary }}</p>
 {% endblock %}

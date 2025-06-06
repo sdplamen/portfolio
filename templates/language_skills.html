@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load language_filters %}
 {% block title %}Language Skills{% endblock %}
 
 {% block content %}
     <h1>Language Skills</h1>
-
     {% if mother_tongue_obj %}
         <h2 class="language-section">Mother Tongue</h2>
-        <p><strong>{{ mother_tongue_obj.language }}</strong></p>
+        <h3 class="language-block">{{ mother_tongue_obj.language }}</h3>
     {% endif %}
 
     <h2 class="language-section">Foreign Languages</h2>
@@ -16,11 +15,11 @@
             <div class="language-block">
                 <h3>{{ lang.language }}</h3>
                 <ul class="language-details-list">
-                    <li>Listening: {{ lang.listening }}</li>
-                    <li>Reading: {{ lang.reading }}</li>
-                    <li>Conversation: {{ lang.conversation }}</li>
-                    <li>Oral Exposure: {{ lang.oral_exposure }}</li>
-                    <li>Writing: {{ lang.writing }}</li>
+                    <li>Listening: {{ lang.listening|proficiency_level }}</li>
+                    <li>Reading: {{ lang.reading|proficiency_level }}</li>
+                    <li>Conversation: {{ lang.conversation|proficiency_level }}</li>
+                    <li>Oral Exposure: {{ lang.oral_exposure|proficiency_level }}</li>
+                    <li>Writing: {{ lang.writing|proficiency_level }}</li>
                 </ul>
             </div>
         {% endfor %}
