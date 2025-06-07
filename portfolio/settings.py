@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') #'django-insecure-614yz!1=d0)$bt=o$hx+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'RENDER_EXTERNAL_HOSTNAME']
+ALLOWED_HOSTS = ['sdplamen-resume.onrender.com']
 
 
 # Application definition
