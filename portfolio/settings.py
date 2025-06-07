@@ -82,20 +82,20 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'resume_db',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'postgresql://plamen:bernanos@localhost:5432/resume_db'), # Optional default for local
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'resume_db',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL', 'postgresql://plamen:bernanos@localhost:5432/resume_db'), # Optional default for local
+#         conn_max_age=600,
+#         ssl_require=True
+#     )
+# }
 
 # DATABASES = {
 #     "default": {
