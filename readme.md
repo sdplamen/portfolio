@@ -12,5 +12,5 @@ I learned so much while making this template, if you use it, please let me know.
 + Bit of **Django views** to render my HTML templates
 + Bit of **Django models** to manage my PostgreSQL database
 + **Implemented Font Montserrat** as my favourite font
-+ And all the required things using**Django framework** to make my project awesome
++ And all the required things using **Django framework** to make my project awesome
 
