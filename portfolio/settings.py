@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY') #'django-insecure-614yz!1=d0)$bt=o$hx+)sza77h%zn+!+s18ye(vf(5dka1bg1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+ALLOWED_HOSTS = ['127.0.0.1', 'RENDER_EXTERNAL_HOSTNAME']
 
 
 # Application definition
@@ -90,7 +90,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL', 'postgresql://plamen:bernanos@localhost:5432/resume_db'), # Optional default for local
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 # DATABASES = {
@@ -144,6 +148,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
