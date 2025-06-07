@@ -4,7 +4,7 @@ from resume import views
 # from django.conf.urls.static import static
 
 urlpatterns = [
-    path('resume/', views.resume, name='resume'),
+    path('', views.resume, name='resume'),
     path('contact/', views.contact_info_view, name='contact_info'),
     path('work-experience/', views.work_experience_view, name='work_experience'),
     path('skills/', views.professional_skills_view, name='professional_skills'),
