@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY') #'django-insecure-614yz!1=d0)$bt=o$hx+)sza77h%zn+!+s18ye(vf(5dka1bg1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'sdplamen-resume.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'RENDER_EXTERNAL_HOSTNAME']
 
 
 # Application definition
