@@ -5,11 +5,12 @@
     <h1>Professional Skills</h1>
     <div class="skills-container-wrapper">
         <div class="skills-category">
-            <h3>Development Skills</h3>
-            <ul class="skills-list">
-                {% for category, skill_names in development_skills.items %}
-                    {% for skill_name in skill_names %}
-                        {% with skill=all_skills_dict|get_item:skill_name %}
+            <h2>Development Skills</h2>
+            {% for category, skill_names in development_skills.items %}
+                <div class="skill-subcategory">
+                    <h3>{{ category }}</h3>
+                    <ul class="skills-list">
+                        {% for skill in skill_names %}
                             <li class="skill-item">
                                 <p>{{ skill.name }}</p>
                                 <div class="progress-bar-container">
@@ -18,18 +19,19 @@
                                     </div>
                                 </div>
                             </li>
-                        {% endwith %}
-                    {% endfor %}
-                {% endfor %}
-            </ul>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
         </div>
 
         <div class="skills-category">
-            <h3>Graphic Design Skills</h3>
-            <ul class="skills-list">
-                {% for category, skill_names in graphic_design_skills.items %}
-                    {% for skill_name in skill_names %}
-                        {% with skill=all_skills_dict|get_item:skill_name %}
+            <h2>Graphic Design Skills</h2>
+            {% for category, skill_names in graphic_design_skills.items %}
+                <div class="skill-subcategory">
+                    <h3>{{ category }}</h3> {# Display the subcategory name #}
+                    <ul class="skills-list">
+                        {% for skill in skill_names %} {# Now skill is the actual skill object #}
                             <li class="skill-item">
                                 <p>{{ skill.name }}</p>
                                 <div class="progress-bar-container">
@@ -38,10 +40,10 @@
                                     </div>
                                 </div>
                             </li>
-                        {% endwith %}
-                    {% endfor %}
-                {% endfor %}
-            </ul>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

@@ -75,7 +75,7 @@ def work_experience_view(request):
 
 def professional_skills_view(request):
     all_skills_queryset = ProfessionalSkill.objects.all().order_by('category', 'name')
-    all_skills_dict = {skill.name: skill for skill in all_skills_queryset}
+    # all_skills_dict = {skill.name: skill for skill in all_skills_queryset}
 
     for skill in all_skills_queryset:
         skill.progress_percent = skill.progress * 10
@@ -84,7 +84,7 @@ def professional_skills_view(request):
         'Web Design',
         'Backend',
         'Computer Science Programming',
-        'Databases'
+        'Databases',
         'Data Structures',
         'DevOps'
     ]
@@ -106,18 +106,17 @@ def professional_skills_view(request):
         if skill.category in development_skill_categories:
             if skill.category not in development_skills:
                 development_skills[skill.category] = []
-            development_skills[skill.category].append(skill.name)
+            development_skills[skill.category].append(skill)
         elif skill.category in graphic_design_skill_categories:
             if skill.category not in graphic_design_skills:
                 graphic_design_skills[skill.category] = []
-            graphic_design_skills[skill.category].append(skill.name)
+            graphic_design_skills[skill.category].append(skill)
 
     context = {
         'development_skills': development_skills,
         'graphic_design_skills': graphic_design_skills,
-        'all_skills_dict': all_skills_dict,
+        # 'all_skills_dict': all_skills_dict, # No longer strictly needed if passing skill objects directly
     }
-
     return render(request, 'professional_skills.html', context)
 
 
