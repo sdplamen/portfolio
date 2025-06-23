@@ -143,21 +143,21 @@ body > p { /* Targets direct paragraphs under the body, like the summary */
     box-sizing: border-box; /* Important for flex item width calculations */
 }
 
-.skill-block h3 {
+.skills-category h3 {
     text-align: center; /* Center the "Development Skills" / "Graphic Design Skills" titles */
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
-.skill-block ul {
+.skill-subcategory ul {
     margin-top: 5px;
     list-style-type: disc;
     margin-left: 20px;
 }
-.skill-block li {
+.skill-subcategory li {
     margin-bottom: 3px;
 }
-.skill-category-title {
+.skill-category {
     font-weight: bold;
     margin-top: 8px;
     margin-bottom: 4px;
