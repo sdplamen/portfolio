@@ -13,7 +13,7 @@
     height: auto;
     border-radius: 50%;
     border: 5px solid #F5DEB3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 0;
     margin-right: 0;
 }
@@ -33,5 +33,5 @@
     max-width: 200px;
     border-radius: 50%;
     border: 5px solid #F5DEB3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
