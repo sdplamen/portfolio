@@ -1,35 +1,34 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Resume{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Portfolio</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'resume' %}">Resume</a></li>
-                <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
-                <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
-                <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
-                <li><a href="{% url 'education_training' %}">Education and Training</a></li>
-                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                <li><a href="{% url 'language_skills' %}">Languages</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'resume'%}">Resume</a></li>
+            <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
+            <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
+            <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
+            <li><a href="{% url 'education_training' %}">Education and Training</a></li>
+            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+            <li><a href="{% url 'language_skills' %}">Languages</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="description">
-        {% block content %}
-        {% endblock %}
-    </main>
+<main class="description">
+    {% block content %}
+    {% endblock %}
+</main>
 
-    <footer>
-        <p>&copy; {% now "M Y" %} My Resume</p>
-    </footer>
+<footer>
+    <p>&copy; {% now "M Y" %} My Resume</p>
+</footer>
 </body>
 </html>

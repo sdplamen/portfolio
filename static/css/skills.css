@@ -1,0 +1,89 @@
+/* --- Professional Skills Section --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.skills-category {
+    flex: 1 1 45%;
+    max-width: 550px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.skills-category h2 {
+    text-align: center;
+    color: #00BFFF; /* Deep sky blue */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.skill-subcategory {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #444; /* Slightly lighter dark gray */
+    border-radius: 6px;
+}
+
+.skills-category h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ADD8E6; /* Light blue */
+    font-size: 1.3em;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+.skill-item p {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    color: #E0E0E0; /* Light gray */
+    font-size: 1.05em;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #555; /* Medium dark gray */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 22px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4CAF50; /* Green */
+    text-align: right;
+    padding-right: 8px;
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 22px;
+    border-radius: 5px;
+    transition: width 0.7s ease-in-out;
+}
+
+.progress-bar.graphic-design {
+    background-color: #2196F3; /* Blue for graphic design */
+}

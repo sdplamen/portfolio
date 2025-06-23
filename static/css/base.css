@@ -5,18 +5,18 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #F5DEB3; /* Default text color, usually overridden */
-    background-color: #333; /* Dark fallback if image fails, complements B&W */
-    background-image: url('https://live.staticflickr.com/65535/52349342717_3e5f0003e2_b.jpg'); /* Overall page background */
+    color: #F5DEB3; /* Antiquewhite */
+    background-color: #333; /* Dark gray */
+    background-image: url('https://live.staticflickr.com/65535/52349342717_3e5f0003e2_b.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps background fixed when scrolling */
+    background-attachment: fixed;
 }
 
 /* Headings outside description block or for the entire page */
 h1, h2, h3 {
-    color: #F5DEB3;
+    color: #F5DEB3; /* Antiquewhite */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     margin-bottom: 15px;
     text-align: center;
@@ -27,62 +27,24 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
 a {
-    color: #4CAF50;
+    color: #4CAF50; /* Green */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #388E3C;
-}
-
----
-/* For smaller screens, stack the image and text vertically */
-.intro-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    padding: 0;
-}
-.intro-header .profile-picture {
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    border: 5px solid #F5DEB3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-    margin-bottom: 0;
-    margin-right: 0;
-}
-.name-title-block {
-    text-align: left;
-}
-.name-title-block h1,
-.name-title-block .personal-title {
-    text-align: center;
-    margin-bottom: 5px;
-    color: #F5DEB3;
-}
-/* --- Profile Picture --- */
-.profile-picture {
-    margin-right: 20px;
-    max-width: 200px;
-    border-radius: 50%;
-    border: 5px solid #F5DEB3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    color: #388E3C; /* Darker green */
 }
 
 .description {
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 3px solid #666;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border: 3px solid #666; /* Gray border */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    color: #333;
+    color: #333; /* Dark text for contrast against white background */
 }
 
 /* Ensure all common text elements within .description are light */
@@ -91,7 +53,7 @@ a:hover {
 .description span,
 .description strong,
 .description em {
-    color: #F5DEB3;
+    color: #F5DEB3; /* Antiquewhite */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
@@ -99,7 +61,7 @@ a:hover {
 .description h1,
 .description h2,
 .description h3 {
-    color: #F5DEB3; /* **Headings inside are also light/antiquewhite** */
+    color: #F5DEB3; /* Antiquewhite */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Subtle shadow for headings on dark background */
 }
 
@@ -109,253 +71,5 @@ a:hover {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 .description a:hover {
-    color: #87CEEB;
-}
-
-/* --- Navigation Bar --- */
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.6); /* Darker, semi-transparent background for nav */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-
-nav ul li {
-    margin: 5px 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #F5DEB3; /* Antiquewhite for nav text (stands out on dark nav background) */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-    font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #F5DEB3; /* Antiquewhite background on hover/active */
-    color: #333; /* Dark text on hover/active for contrast */
-}
-
----
-
-/* --- Section Styling (Work Experience, Education, Portfolio, Languages) --- */
-/* This class will be applied to individual blocks within pages like job entries or education details */
-.section-block {
-    margin-bottom: 25px;
-    padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* **Dark background for inner blocks** */
-    border: 1px solid #555; /* Subtle light border */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    color: #E0E0E0; /* **Light text for section blocks** */
-}
-
-.section-block:last-child {
-    margin-bottom: 0;
-}
-
-/* Ensure all common text elements within section blocks are light */
-.section-block h3,
-.section-block p,
-.section-block ul,
-.section-block li,
-.section-block span,
-.section-block strong,
-.section-block em {
-    text-align: left;
-    color: antiquewhite;
-    text-shadow: 2px 2px 0 rgba(0,0,0,0.9);
-}
-
-.job-title, .degree-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #ADD8E6; /* Light blue for titles */
-}
-.company, .institution-name {
-    font-style: italic;
-    margin-bottom: 3px;
-    color: #B0B0B0; /* Slightly darker light gray */
-}
-.duration {
-    font-size: 0.9em;
-    color: #C0C0C0; /* Lighter gray for duration */
-    margin-bottom: 10px;
-}
-
----
-
-/* --- Professional Skills Section --- */
-.skills-container-wrapper {
-    text-align: center;
-    overflow: hidden;
-}
-.skills-category {
-    margin-bottom: 20px;
-    display: inline-block;
-    vertical-align: top;
-    width: 40%;
-    margin-right: 2%;
-    padding: 10px  10px;
-    box-sizing: border-box;
-}
-.skills-category h3 {
-    text-align: left;
-    margin-bottom: 10px;
-    color: #ADD8E6; /* Light blue for skill categories */
-}
-.skills-list {
-    list-style: none;
-    padding: 0;
-}
-.skill-item {
-    margin-bottom: 10px;
-}
-.skill-item p {
-    margin: 0 0 5px 0;
-    font-weight: 500;
-    color: #E0E0E0; /* Light text */
-}
-.progress-bar-container {
-    width: 100%;
-    background-color: #555;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 20px;
-}
-.progress-bar {
-    height: 100%;
-    background-color: #4CAF50;
-    text-align: center;
-    color: white;
-    line-height: 20px;
-    border-radius: 5px;
-    transition: width 0.5s ease-in-out;
-}
-.progress-bar.graphic-design {
-    background-color: #2196F3;
-}
-
-/* --- Portfolio Section --- */
-.portfolio-list {
-    list-style: none;
-    padding: 0;
-}
-.portfolio-list li {
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid #555;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    color: #F5DEB3;
-}
-.portfolio-list li strong {
-    color: #F5DEB3;
-}
-.portfolio-list li a {
-    color: #ADD8E6;
-}
-
----
-
-/* --- Language Skills Section --- */
-.language-section {
-    margin-bottom: 20px;
-}
-.language-section h2 {
-    text-align: left;
-    color: #ADD8E6; /* Light blue */
-}
-.language-block {
-    margin-bottom: 15px;
-    padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.4); /* **Dark background** */
-    border-radius: 8px;
-    border: 1px solid #555;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    color: #E0E0E0;
-}
-
-.language-block h3 {
-    text-align: left;
-    margin-bottom: 5px;
-    color: #ADD8E6; /* Light blue */
-}
-.language-block ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.language-block li {
-    background-color: grey; /* Darker background for individual items */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    border: 1px solid #666;
-    color: #E0E0E0; /* Light text */
-}
-
----
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    font-weight: 600;
-    color: antiquewhite;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-    background-color: rgba(0, 0, 0, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-}
-
----
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .description {
-        margin: 20px;
-        padding: 20px;
-    }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin: 10px 0;
-    }
-    nav ul li {
-        margin: 5px 0;
-        width: 90%;
-        text-align: center;
-    }
-    nav ul li a {
-        display: block;
-        padding: 10px;
-    }
-}
-
-
-
-@media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.3em; }
-    .description {
-        padding: 15px;
-    }
-    .section-block {
-        padding: 10px 15px;
-    }
+    color: #87CEEB; /* Lighter sky blue on hover */
 }
