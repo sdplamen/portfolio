@@ -4,10 +4,10 @@
 {% block content %}
     <h1>Professional Skills</h1>
     <div class="skills-container">
-        <div class="skills-category">
+        <div class="skills-category_development">
             <h2>Development Skills</h2>
             {% for category, skill_names in development_skills.items %}
-                <div class="skill-subcategory">
+                <div class="skill-subcategory_development">
                     <h3>{{ category }}</h3>
                     <ul class="skills-list">
                         {% for skill in skill_names %}
@@ -25,10 +25,10 @@
             {% endfor %}
         </div>
 
-        <div class="skills-category">
+        <div class="skills-category-graphic">
             <h2>Graphic Design Skills</h2>
             {% for category, skill_names in graphic_design_skills.items %}
-                <div class="skill-subcategory">
+                <div class="skill-subcategory_graphic">
                     <h3>{{ category }}</h3> {# Display the subcategory name #}
                     <ul class="skills-list">
                         {% for skill in skill_names %} {# Now skill is the actual skill object #}

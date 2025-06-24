@@ -10,7 +10,8 @@
     box-sizing: border-box;
 }
 
-.skills-category {
+/* Base styles for both skill categories */
+.skills-category_development, .skills-category-graphic {
     flex: 1 1 45%;
     max-width: 550px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -21,27 +22,65 @@
     text-align: left;
 }
 
-.skills-category h2 {
+/* Development Skills Category */
+.skills-category_development h2 {
     text-align: center;
-    color: #00BFFF; /* Deep sky blue */
+    color: #4CAF50; /* Green for Development progress bar */ /* #00BFFF; Deep sky blue for Development H2 */
     margin-bottom: 25px;
     font-size: 1.8em;
 }
 
-.skill-subcategory {
+.skills-category_development .skill-subcategory_development {
     margin-bottom: 25px;
     padding: 15px;
     background-color: #444; /* Slightly lighter dark gray */
     border-radius: 6px;
 }
 
-.skills-category h3 {
+.skills-category_development .skill-subcategory_development h3 {
     text-align: center;
     margin-bottom: 15px;
-    color: #ADD8E6; /* Light blue */
+    color: #9CE19E; /* Light blue for Development H3 */
     font-size: 1.3em;
 }
 
+.skills-category_development .skill-item p {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    color: #E0E0E0; /* Light gray for Development skill names */
+    font-size: 1.05em;
+}
+
+/* Graphic Design Skills Category */
+.skills-category-graphic h2 {
+    text-align: center;
+    color: #2196F3; /* Blue for Graphic Design progress bar */ /* #FFD700; Gold for Graphic Design H2 - Example color */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.skills-category-graphic .skill-subcategory_graphic {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #444; /* Slightly lighter dark gray */
+    border-radius: 6px;
+}
+
+.skills-category-graphic .skill-subcategory_graphic h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ADD8E6; /* Light Salmon for Graphic Design H3 - Example color */
+    font-size: 1.3em;
+}
+
+.skills-category-graphic .skill-item p {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    color: #F0F0F0; /* Slightly different light gray for Graphic Design skill names */
+    font-size: 1.05em;
+}
+
+/* Common styles for lists and items (can remain the same if no differentiation needed) */
 .skills-list {
     list-style: none;
     padding: 0;
@@ -56,13 +95,7 @@
     margin-bottom: 0;
 }
 
-.skill-item p {
-    margin: 0 0 8px 0;
-    font-weight: 500;
-    color: #E0E0E0; /* Light gray */
-    font-size: 1.05em;
-}
-
+/* Progress Bar Styles */
 .progress-bar-container {
     width: 100%;
     background-color: #555; /* Medium dark gray */
@@ -73,7 +106,7 @@
 
 .progress-bar {
     height: 100%;
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; /* Green for Development progress bar */
     text-align: right;
     padding-right: 8px;
     color: white;
@@ -85,5 +118,5 @@
 }
 
 .progress-bar.graphic-design {
-    background-color: #2196F3; /* Blue for graphic design */
+    background-color: #2196F3; /* Blue for Graphic Design progress bar */
 }
