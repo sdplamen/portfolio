@@ -9,7 +9,7 @@
 .language-block {
     margin-bottom: 15px;
     padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.2); /* Dark background */
     border-radius: 8px;
     border: 1px solid #555;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);

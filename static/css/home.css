@@ -2,7 +2,7 @@
 .intro-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: inherit;
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -12,7 +12,7 @@
     max-width: 200px;
     height: auto;
     border-radius: 50%;
-    border: 5px solid #F5DEB3;
+    border: 2px solid #F5DEB3;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 0;
     margin-right: 0;
