@@ -82,6 +82,7 @@ def professional_skills_view(request):
 
     development_skill_categories = [
         'Web Design',
+        'Frontend',
         'Backend',
         'Computer Science Programming',
         'Databases',
