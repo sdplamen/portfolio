@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load resume_filters %}
-{% block title %}Contact Information{% endblock %}
-
+<title>{% block title %}Contact Information{% endblock %}</title>
 {% block content %}
     <h1>Contact Information</h1>
         <p><strong>Address:</strong> {{ personal_info.contact_address }}</p>

@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %}Education & Training{% endblock %}
-
+<title>{% block title %}Education & Training{% endblock %}</title>
 {% block content %}
     <h1>Education & Training</h1>
         {% for education in education_training %}
