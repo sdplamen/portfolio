@@ -1,7 +1,6 @@
+from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-from django.db.models import Q
-from django.db.models.constraints import CheckConstraint
 
 
 # Create your models here.
@@ -13,7 +12,7 @@ class PersonalInfo(models.Model):
     contact_phone = models.CharField(max_length=20)
     email = models.EmailField()
     target_employment = models.CharField(max_length=200)
-    profile_picture = models.ImageField(upload_to='static/img/')
+    profile_picture = CloudinaryField(folder='profiles')
 
     def __str__(self):
         return self.name
