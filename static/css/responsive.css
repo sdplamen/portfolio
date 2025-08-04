@@ -1,4 +1,3 @@
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .description {
         margin: 20px;
@@ -19,9 +18,8 @@
         padding: 10px;
     }
 
-    /* Skills specific responsive adjustments */
     .skills-category {
-        flex: 1 1 90%; /* On smaller screens, make them take up more width */
+        flex: 1 1 90%;
         max-width: 90%;
     }
     .skills-container {

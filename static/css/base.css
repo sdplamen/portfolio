@@ -5,8 +5,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #F5DEB3; /* Antiquewhite */
-    background-color: #333; /* Dark gray */
+    color: #F5DEB3;
+    background-color: #333;
     background-image: url('https://live.staticflickr.com/65535/54620762536_a3541fe803_b.jpg');
     background-size: cover;
     background-position: center;
@@ -16,7 +16,7 @@ body {
 
 /* Headings outside description block or for the entire page */
 h1, h2, h3 {
-    color: #F5DEB3; /* Antiquewhite */
+    color: #F5DEB3;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     margin-bottom: 15px;
     text-align: center;
@@ -27,49 +27,49 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
 a {
-    color: #4CAF50; /* Green */
+    color: #4CAF50;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #388E3C; /* Darker green */
+    color: #388E3C;
 }
 
 .description {
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-    border: 3px solid #666; /* Gray border */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 3px solid #666;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    color: #333; /* Dark text for contrast against white background */
+    color: #333;
 }
 
-/* Ensure all common text elements within .description are light */
+
 .description p,
 .description li,
 .description span,
 .description strong,
 .description em {
-    color: #F5DEB3; /* Antiquewhite */
+    color: #F5DEB3;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-/* Headings *inside* the description block */
+
 .description h1,
 .description h2,
 .description h3 {
-    color: #F5DEB3; /* Antiquewhite */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Subtle shadow for headings on dark background */
+    color: #F5DEB3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Links inside the description block */
 .description a {
-    color: antiquewhite; /* Light blue for links, stands out on dark background */
+    color: antiquewhite;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 .description a:hover {
-    color: #87CEEB; /* Lighter sky blue on hover */
+    color: #87CEEB;
 }

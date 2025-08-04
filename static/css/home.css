@@ -26,10 +26,9 @@
     margin-bottom: 5px;
     color: #F5DEB3; /* Antiquewhite */
 }
-/* --- Profile Picture --- */
-/* Note: There was a duplicate .profile-picture rule. Consolidated the unique properties here. */
+
 .profile-picture {
-    margin-right: 20px; /* This was unique to the separate .profile-picture rule */
+    margin-right: 20px;
     max-width: 200px;
     border-radius: 50%;
     border: 5px solid #F5DEB3;

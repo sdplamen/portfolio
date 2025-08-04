@@ -1,20 +1,17 @@
-/* --- Section Styling (Work Experience, Education, Portfolio, Languages) --- */
-/* This class will be applied to individual blocks within pages like job entries or education details */
 .section-block {
     margin-bottom: 25px;
     padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark background for inner blocks */
-    border: 1px solid #555; /* Subtle light border */
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #555;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    color: #E0E0E0; /* Light text for section blocks */
+    color: #E0E0E0;
 }
 
 .section-block:last-child {
     margin-bottom: 0;
 }
 
-/* Ensure all common text elements within section blocks are light */
 .section-block h3,
 .section-block p,
 .section-block ul,
@@ -30,37 +27,34 @@
 .job-title, .degree-title {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #ADD8E6; /* Light blue for titles */
+    color: #ADD8E6;
 }
 .company, .institution-name {
     font-style: italic;
     margin-bottom: 3px;
-    color: #B0B0B0; /* Slightly darker light gray */
+    color: #B0B0B0;
 }
 .duration {
     font-size: 0.9em;
-    color: #C0C0C0; /* Lighter gray for duration */
+    color: #C0C0C0;
     margin-bottom: 10px;
 }
 
-/* --- Portfolio Section Specifics (uses .section-block for list items) --- */
 .portfolio-list {
     list-style: none;
     padding: 0;
 }
-.portfolio-list li {
-    /* Most styles are covered by .section-block, these are additions/overrides */
-    margin-bottom: 10px; /* Adjust margin between portfolio items */
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter background than general .section-block */
-    padding: 10px 15px; /* Smaller padding than general .section-block */
+.portfolio-list li {/
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 15px;
     border-radius: 8px;
     border: 1px solid #555;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    color: #F5DEB3; /* Antiquewhite */
+    color: #F5DEB3;
 }
 .portfolio-list li strong {
-    color: #F5DEB3; /* Antiquewhite */
+    color: #F5DEB3;
 }
 .portfolio-list li a {
-    color: #ADD8E6; /* Light blue */
+    color: #ADD8E6;
 }
