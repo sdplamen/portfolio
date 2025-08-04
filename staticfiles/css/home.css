@@ -1,0 +1,37 @@
+/* For smaller screens, stack the image and text vertically */
+.intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 0;
+}
+.intro-header .profile-picture {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #F5DEB3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+    margin-right: 0;
+}
+.name-title-block {
+    text-align: left;
+}
+.name-title-block h1,
+.name-title-block .personal-title {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #F5DEB3; /* Antiquewhite */
+}
+/* --- Profile Picture --- */
+/* Note: There was a duplicate .profile-picture rule. Consolidated the unique properties here. */
+.profile-picture {
+    margin-right: 20px; /* This was unique to the separate .profile-picture rule */
+    max-width: 200px;
+    border-radius: 50%;
+    border: 5px solid #F5DEB3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}

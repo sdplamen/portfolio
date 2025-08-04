@@ -8,29 +8,29 @@
     <title>{% block title %}Portfolio{% endblock %}</title>
     {#    {% block title %}Portfolio{% endblock %}#}
 </head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'resume'%}">Resume</a></li>
-            <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
-            <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
-            <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
-            <li><a href="{% url 'education_training' %}">Education and Training</a></li>
-            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-            <li><a href="{% url 'language_skills' %}">Languages</a></li>
-        </ul>
-    </nav>
-</header>
+    <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'resume'%}">Resume</a></li>
+                <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
+                <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
+                <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
+                <li><a href="{% url 'education_training' %}">Education and Training</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a href="{% url 'language_skills' %}">Languages</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="description">
-    {% block content %}
-    {% endblock %}
-</main>
+    <main class="description">
+        {% block content %}
+        {% endblock %}
+    </main>
 
-<footer>
-    <p>&copy; {% now "M Y" %} My Resume</p>
-</footer>
-<script src="{% static 'js/script.js' %}"></script>
-</body>
+    <footer>
+        <p>&copy; {% now "M Y" %} My Resume</p>
+    </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
 </html>

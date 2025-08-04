@@ -1,0 +1,32 @@
+/* --- Navigation Bar --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker, semi-transparent background for nav */
+    /*border-radius: 10px;*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+nav ul li {
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F5DEB3; /* Antiquewhite for nav text (stands out on dark nav background) */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #F5DEB3; /* Antiquewhite background on hover/active */
+    color: #333; /* Dark text on hover/active for contrast */
+}

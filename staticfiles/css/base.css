@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #F5DEB3; /* Antiquewhite */
+    background-color: #333; /* Dark gray */
+    background-image: url('https://images.stockcake.com/public/e/e/e/eee8ade6-b08b-4f18-a5a2-acc1d1cbb31a_large/digital-data-flow-stockcake.jpg');
+    /*https://staging-jubilee.flickr.com/65535/54620822916_ef4200bb39_o.jpg*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Headings outside description block or for the entire page */
+h1, h2, h3 {
+    color: #F5DEB3; /* Antiquewhite */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+a {
+    color: #4CAF50; /* Green */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #388E3C; /* Darker green */
+}
+
+.description {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border: 3px solid #666; /* Gray border */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    color: #333; /* Dark text for contrast against white background */
+}
+
+/* Ensure all common text elements within .description are light */
+.description p,
+.description li,
+.description span,
+.description strong,
+.description em {
+    color: #F5DEB3; /* Antiquewhite */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* Headings *inside* the description block */
+.description h1,
+.description h2,
+.description h3 {
+    color: #F5DEB3; /* Antiquewhite */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Subtle shadow for headings on dark background */
+}
+
+/* Links inside the description block */
+.description a {
+    color: antiquewhite; /* Light blue for links, stands out on dark background */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.description a:hover {
+    color: #87CEEB; /* Lighter sky blue on hover */
+}
