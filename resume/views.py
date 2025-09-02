@@ -67,8 +67,14 @@ def resume(request):
 
 def contact_info_view(request):
     personal_info = PersonalInfo.objects.first()
+    if personal_info:
+        personal_info.visitor_count += 1
+        personal_info.save()
+    else:
+        personal_info = None
     context = {
         'personal_info': personal_info,
+        'visitor_count': personal_info.visitor_count if personal_info else 0
     }
     return render(request, 'contact_info.html', context)
 
