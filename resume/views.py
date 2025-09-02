@@ -53,8 +53,14 @@ def get_item(dictionary, key):
 
 def resume(request):
     personal_info = PersonalInfo.objects.first()
+    if personal_info:
+        personal_info.visitor_count += 1
+        personal_info.save()
+    else:
+        personal_info = None
     context = {
         'personal_info': personal_info,
+        'visitor_count': personal_info.visitor_count if personal_info else 0
         # You might include a summary of all sections here, or just links
     }
     return render(request, 'resume.html', context)

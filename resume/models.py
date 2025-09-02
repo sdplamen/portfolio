@@ -13,6 +13,7 @@ class PersonalInfo(models.Model):
     email = models.EmailField()
     target_employment = models.CharField(max_length=200)
     profile_picture = CloudinaryField(folder='profiles')
+    visitor_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name

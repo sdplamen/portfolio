@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Portfolio{% endblock %}</title>
-    {#    {% block title %}Portfolio{% endblock %}#}
 </head>
     <body>
     <header>
@@ -30,6 +29,7 @@
 
     <footer>
         <p>&copy; {% now "M Y" %} My Resume</p>
+        <div class="visitor-counter">{{ visitor_count }}</div>
     </footer>
         <script src="{% static 'js/script.js' %}"></script>
     </body>
