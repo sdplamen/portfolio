@@ -5,21 +5,30 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{% block title %}Portfolio{% endblock %}</title>
+    <title>{% block title %}My Resume{% endblock %}</title>
 </head>
-    <body>
+<body>
     <header>
         <nav>
             <ul>
-                <li><a href="{% url 'resume'%}">Resume</a></li>
-                <li><a href="{% url 'contact_info' %}">Contact Info</a></li>
-                <li><a href="{% url 'work_experience' %}">Work Experience</a></li>
-                <li><a href="{% url 'professional_skills' %}">Professional Skills</a></li>
-                <li><a href="{% url 'education_training' %}">Education and Training</a></li>
-                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                <li><a href="{% url 'language_skills' %}">Languages</a></li>
+                {% with lang_param=request.GET.lang|default:'first' %}
+                <li><a href="{% url 'resume' %}?lang={{ lang_param }}">Resume</a></li>
+                <li><a href="{% url 'contact_info' %}?lang={{ lang_param }}">Contact Info</a></li>
+                <li><a href="{% url 'work_experience' %}?lang={{ lang_param }}">Work Experience</a></li>
+                <li><a href="{% url 'professional_skills' %}?lang={{ lang_param }}">Professional Skills</a></li>
+                <li><a href="{% url 'education_training' %}?lang={{ lang_param }}">Education & Training</a></li>
+                <li><a href="{% url 'portfolio' %}?lang={{ lang_param }}">Portfolio</a></li>
+                <li><a href="{% url 'language_skills' %}?lang={{ lang_param }}">Languages</a></li>
+                {% endwith %}
             </ul>
         </nav>
+
+        <div class="language-switcher">
+            <a href="{% url request.resolver_match.url_name %}?lang=first"
+               class="{% if request.GET.lang|default:'first' == 'first' %}active{% endif %}">EN</a>
+            <a href="{% url request.resolver_match.url_name %}?lang=last"
+               class="{% if request.GET.lang == 'last' %}active{% endif %}">BG</a>
+        </div>
     </header>
 
     <main class="description">
@@ -29,8 +38,11 @@
 
     <footer>
         <p>&copy; {% now "M Y" %} My Resume</p>
-        <div class="visitor-counter">{{ visitor_count }}</div>
+        {% if personal_info %}
+            <div class="visitor-counter">{{ personal_info.visitor_count }}</div>
+        {% endif %}
     </footer>
-        <script src="{% static 'js/script.js' %}"></script>
-    </body>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
 </html>
