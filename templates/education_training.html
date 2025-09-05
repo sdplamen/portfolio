@@ -15,6 +15,9 @@
                         Present
                     {% endif %}
                 </p>
+                {% if education.description %}
+                    <p>{{ education.description|safe|linebreaksbr }}</p>
+                {% endif %}
             </div>
         {% endfor %}
 {% endblock %}

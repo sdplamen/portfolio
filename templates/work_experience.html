@@ -15,6 +15,9 @@
                             Present
                         {% endif %}
                 </p>
+                {% if job.description %}
+                    <p class="job-description">{{ job.description|safe|linebreaksbr }}</p>
+                {% endif %}
             </div>
         {% endfor %}
 {% endblock %}

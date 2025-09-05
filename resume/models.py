@@ -12,6 +12,7 @@ class PersonalInfo(models.Model):
     contact_phone = models.CharField(max_length=20)
     email = models.EmailField()
     target_employment = models.CharField(max_length=200)
+    soft_skills = models.TextField( null=True, blank=True)
     profile_picture = CloudinaryField(folder='profiles')
     visitor_count = models.IntegerField(default=0)
 
@@ -31,6 +32,7 @@ class WorkExperience(models.Model):
     company = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} at {self.company}"
@@ -52,6 +54,7 @@ class EducationTraining(models.Model):
     institution = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.degree} from {self.institution}"

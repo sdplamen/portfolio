@@ -6,7 +6,7 @@ from resume.models import WorkExperience, ProfessionalSkill, PersonalInfo, Portf
 # Register your models here.
 @admin.register(PersonalInfo)
 class PersonalInfoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'title', 'summary', 'contact_address', 'contact_phone', 'email', 'target_employment', 'profile_picture'
+    list_display = ('name', 'title', 'summary', 'contact_address', 'contact_phone', 'email', 'target_employment', 'soft_skills', 'profile_picture'
 )
 
 @admin.register(PortfolioLink)

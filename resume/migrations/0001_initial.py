@@ -22,6 +22,7 @@ class Migration(migrations.Migration):
                 ('institution', models.CharField(max_length=200)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField(blank=True, null=True)),
+                ('description', models.TextField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
@@ -48,6 +49,7 @@ class Migration(migrations.Migration):
                 ('contact_phone', models.CharField(max_length=20)),
                 ('email', models.EmailField(max_length=254)),
                 ('target_employment', models.CharField(max_length=200)),
+                ('soft_skills', models.TextField(blank=True, null=True)),
                 ('profile_picture', cloudinary.models.CloudinaryField(max_length=255)),
                 ('visitor_count', models.IntegerField(default=0)),
             ],
@@ -69,6 +71,7 @@ class Migration(migrations.Migration):
                 ('company', models.CharField(max_length=200)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField(blank=True, null=True)),
+                ('description', models.TextField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
