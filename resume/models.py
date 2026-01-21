@@ -13,7 +13,8 @@ class PersonalInfo(models.Model):
     email = models.EmailField()
     target_employment = models.CharField(max_length=200)
     soft_skills = models.TextField( null=True, blank=True)
-    profile_picture = CloudinaryField(folder='profiles')
+    profile_picture = models.URLField(null=True, blank=True)
+    # profile_picture = CloudinaryField(folder='profiles')
     visitor_count = models.IntegerField(default=0)
 
     def __str__(self):

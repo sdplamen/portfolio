@@ -4,7 +4,8 @@
 {% load resume_filters %}
 {% block content %}
     <div class="section-block">
-        <img src="{{ personal_info.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+        <img src="{{ personal_info.profile_picture }}" alt="Profile" class="profile-picture">
+{#        <img src="{{ personal_info.profile_picture.url }}" alt="Profile Picture" class="profile-picture">#}
         <span class="name-title-block">
             <h1>{{ personal_info.name }}</h1>
             <h3 class="personal-title">{{ personal_info.title }}</h3>
