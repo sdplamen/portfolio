@@ -14,3 +14,4 @@ I learned so much while making this template, if you use it, please let me know.
 + **Implemented Font Montserrat** as my favourite font
 + And all the required things using **Django framework** to make my project awesome
 
+**Live Demo:** [https://sdplamen-resume.onrender.com](https://sdplamen-resume.onrender.com)
